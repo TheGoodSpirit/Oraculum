@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oraculum | Rgister/SignIn</title>
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="cover">
+        <h1 class="sign-up">Join Oraculum Today</h1>
+        <p class="sign-up">
+          Unlock a world of knowledge. Get answers, share expertise, and
+          collaborate with a community of learners and professionals.
+        </p>
+        <a class="button sign-up" href="#cover">Sign Up</a>
+
+        <h1 class="sign-in">Welcome Back to Oraculum</h1>
+        <p class="sign-in">
+          Log in to continue your learning journey, explore questions, and help
+          others by sharing your knowledge.
+        </p>
+        <br />
+        <a class="button sub sign-in" href="#">Sign In</a>
+      </div>
+
+      <!-- Login Box -->
+      <div id="login">
+        <h1>Sign In</h1>
+        <form action="./Assets/PHP/login.php" method="POST">
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+          /><br />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="off"
+          /><br />
+          <a id="forgot-pass" href="#">Forgot your password?</a><br />
+          <input class="submit-btn" type="submit" value="Sign In" />
+        </form>
+      </div>
+
+      <!-- Register Box -->
+      <div id="register">
+        <h1>Create Account</h1>
+        <form action="./Assets/PHP/signup.php" method="POST">
+          <input
+            name="username"
+            type="text"
+            placeholder="Name"
+            autocomplete="off"
+          /><br />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+          /><br />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="off"
+          /><br />
+          <input class="submit-btn" type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
