@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             // Store user data in session
             $_SESSION['user_email'] = $row['email'];
-            $_SESSION['user_name'] = $row['name'];  // Assuming you have a 'name' column
+            $_SESSION['user_name'] = $row['username'];  // Assuming you have a 'name' column
 
             // Redirect to user dashboard
             header('Location: ../Pages/dashboard.php');
