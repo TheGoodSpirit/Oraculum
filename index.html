@@ -6,53 +6,61 @@
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
   </head>
   <body>
-    <div id="container">
-      <!-- Login Box -->
-      <div id="login">
-        <h1>Sign In</h1>
-        <form action="./Assets/PHP/login.php" method="POST">
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            autocomplete="off"
-          /><br />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            autocomplete="off"
-          /><br />
-          <a id="forgot-pass" href="#">Forgot your password?</a><br />
-          <input class="submit-btn" type="submit" value="Sign In" />
-        </form>
+    <section class="main">
+      <div class="cover">
+        <div class="cover-card">
+          <div class="front">
+            <p class="title">register Intro</p>
+            <p>Hover Me</p>
+          </div>
+          <div class="back">
+            <p class="title">login intro</p>
+            <p>Leave Me</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Register Box -->
-      <div id="register">
-        <h1>Create Account</h1>
-        <form action="./Assets/PHP/signup.php" method="POST">
-          <input
-            name="username"
-            type="text"
-            placeholder="Name"
-            autocomplete="off"
-          /><br />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            autocomplete="off"
-          /><br />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            autocomplete="off"
-          /><br />
-          <input class="submit-btn" type="submit" value="Sign Up" />
-        </form>
+      <!-- Forms -->
+      <div class="cover">
+        <div class="cover-card">
+          <!-- Register Box -->
+          <div class="front">
+            <div class="register" id="register">
+              <h1>Create Account</h1>
+              <form action="./Assets/PHP/signup.php" method="POST">
+                <input name="username" type="text" placeholder="Name" /><br />
+                <input name="email" type="email" placeholder="Email" /><br />
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                /><br />
+                <input class="submit-btn" type="submit" value="Sign Up" />
+                <p>
+                  Already have an account?
+                  <a id="forgot-pass" href="#">Login</a>
+                </p>
+              </form>
+            </div>
+          </div>
+          <!-- Login Box -->
+          <div class="back">
+            <div class="login" id="login">
+              <h1>Sign In</h1>
+              <form action="./Assets/PHP/login.php" method="POST">
+                <input name="email" type="email" placeholder="Email" /><br />
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                /><br />
+                <a id="forgot-pass" href="#">Forgot your password?</a><br />
+                <input class="submit-btn" type="submit" value="Sign In" />
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>

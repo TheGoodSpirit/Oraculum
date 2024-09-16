@@ -1,18 +1,7 @@
 <?php
 session_start();  // Start a session
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "oraculum";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require './startConnection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -26,11 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             // Store user data in session
             $_SESSION['user_email'] = $row['email'];
-            $_SESSION['user_name'] = $row['username'];  // Assuming you have a 'name' column
+            $_SESSION['user_name'] = $row['username'];  
 
             // Redirect to user dashboard
             header('Location: ../Pages/dashboard.php');
-            exit();  // Prevent further execution after redirection
         } else {
             echo "Invalid password!";
         }
@@ -38,6 +26,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "User not found!";
     }
 }
-
-$conn->close();
+require './closeConnection.php';
 ?>
