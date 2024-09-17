@@ -8,21 +8,62 @@
   <body>
     <section class="main">
       <div class="cover">
-        <div class="cover-card">
+        <div class="cover-card" id="cover-card">
           <div class="front">
-            <p class="title">register Intro</p>
-            <p>Hover Me</p>
+            <div class="intro">
+              <h1>
+                New here? , <br />
+                Join <span>Oraculum</span> Today!
+              </h1>
+              <p>
+                Create an account and start sharing your knowledge with
+                Oraculums growing community!
+              </p>
+            </div>
+            <div class="graphics">
+              <video
+                width="300px"
+                loop
+                autoplay
+                src="Assets/Vid/register.mp4"
+              ></video>
+            </div>
+            <div class="intro">
+              <p>
+                Already have an account?
+                <button class="redirect" id="toLogin" type="button">Login</button>
+              </p>
+            </div>
           </div>
           <div class="back">
-            <p class="title">login intro</p>
-            <p>Leave Me</p>
+            <div class="intro">
+              <h1>Welcome Back!</h1>
+              <p>
+                Sign in to explore the world of knowledge sharing and get quick
+                answers from experts!
+              </p>
+            </div>
+            <div class="graphics">
+              <video
+                width="300px"
+                loop
+                autoplay
+                src="Assets/Vid/login.mp4"
+              ></video>
+            </div>
+            <div class="intro">
+              <p>
+                Dont have an account?
+                <button class="redirect" id="toSignup" type="button">Sign Up</button>
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Forms -->
       <div class="cover">
-        <div class="cover-card">
+        <div class="cover-card" id="cover-card">
           <!-- Register Box -->
           <div class="front">
             <div class="register" id="register">
@@ -36,10 +77,6 @@
                   placeholder="Password"
                 /><br />
                 <input class="submit-btn" type="submit" value="Sign Up" />
-                <p>
-                  Already have an account?
-                  <a id="forgot-pass" href="#">Login</a>
-                </p>
               </form>
             </div>
           </div>
@@ -63,4 +100,5 @@
       </div>
     </section>
   </body>
+  <script src="./Assets/Scripts/app.js"></script>
 </html>
