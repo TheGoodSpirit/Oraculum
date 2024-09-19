@@ -4,12 +4,20 @@
     <meta charset="UTF-8" />
     <title>Oraculum | Rgister/SignIn</title>
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <section class="main">
       <div class="cover">
         <div class="cover-card" id="cover-card">
-          <div class="front">
+          <div class="front" id="signupCover">
             <div class="intro">
               <h1>
                 New here? , <br />
@@ -31,11 +39,13 @@
             <div class="intro">
               <p>
                 Already have an account?
-                <button class="redirect" id="toLogin" type="button">Login</button>
+                <button class="redirect" id="toLogin" type="button">
+                  Login
+                </button>
               </p>
             </div>
           </div>
-          <div class="back">
+          <div class="back" id="loginCover">
             <div class="intro">
               <h1>Welcome Back!</h1>
               <p>
@@ -54,7 +64,9 @@
             <div class="intro">
               <p>
                 Dont have an account?
-                <button class="redirect" id="toSignup" type="button">Sign Up</button>
+                <button class="redirect" id="toSignup" type="button">
+                  Sign Up
+                </button>
               </p>
             </div>
           </div>
@@ -65,32 +77,52 @@
       <div class="cover">
         <div class="cover-card" id="cover-card">
           <!-- Register Box -->
-          <div class="front">
+          <div class="front" id="signupForm">
             <div class="register" id="register">
               <h1>Create Account</h1>
               <form action="./Assets/PHP/signup.php" method="POST">
-                <input name="username" type="text" placeholder="Name" /><br />
-                <input name="email" type="email" placeholder="Email" /><br />
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                /><br />
+                <p class="input">
+                  <ion-icon name="person-outline"></ion-icon>
+                  <input name="username" type="text" placeholder="Userame" />
+                </p>
+                <p class="input">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <input name="email" type="email" placeholder="Email" />
+                </p>
+                <p class="input">
+                  <ion-icon name="eye-outline"></ion-icon>
+                  <ion-icon name="eye-off-outline"></ion-icon>
+                  <input
+                    id="pwdSignup"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                  />
+                </p>
                 <input class="submit-btn" type="submit" value="Sign Up" />
               </form>
             </div>
           </div>
           <!-- Login Box -->
-          <div class="back">
+          <div class="back" id="loginForm">
             <div class="login" id="login">
               <h1>Sign In</h1>
               <form action="./Assets/PHP/login.php" method="POST">
-                <input name="email" type="email" placeholder="Email" /><br />
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                /><br />
+                <p class="input">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <input name="email" type="email" placeholder="Email" />
+                </p>
+
+                <p class="input">
+                  <ion-icon name="eye-outline"></ion-icon>
+                  <ion-icon name="eye-off-outline"></ion-icon>
+                  <input
+                    id="pwdLogin"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                  /><br />
+                </p>
                 <a id="forgot-pass" href="#">Forgot your password?</a><br />
                 <input class="submit-btn" type="submit" value="Sign In" />
               </form>
