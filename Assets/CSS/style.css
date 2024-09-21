@@ -25,7 +25,7 @@ section {
 }
 .cover {
   width: 500px;
-  height: 70vh;
+  height: 100%;
   perspective: 1000px;
 }
 .cover-card {
@@ -88,7 +88,7 @@ form {
   padding: 30px;
   border-radius: 20px;
 }
-.input,
+#input,
 input {
   width: 100%;
   height: 100%;
@@ -103,7 +103,7 @@ input {
   border: none;
   outline: none;
 }
-.input:focus-within {
+#input:focus-within {
   border: 1.5px solid #2d79f3;
 }
 .submit-btn {
@@ -132,4 +132,3 @@ input {
   background: transparent;
   cursor: pointer;
 }
-

@@ -1,8 +1,17 @@
+<?php 
+  session_start(); 
+  function displayError($err) {
+    if (isset($_SESSION['errors'][$err])) {
+      echo "<span style='color: red; font-size: 0.6rem; text-align: justify;'>{$_SESSION['errors'][$err]}</span>";
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Oraculum | Rgister/SignIn</title>
+    <title>Oraculum | Register/SignIn</title>
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
     <script
       type="module"
@@ -73,7 +82,7 @@
         </div>
       </div>
 
-      <!-- Forms -->
+
       <div class="cover">
         <div class="cover-card" id="cover-card">
           <!-- Register Box -->
@@ -81,47 +90,41 @@
             <div class="register" id="register">
               <h1>Create Account</h1>
               <form action="./Assets/PHP/signup.php" method="POST">
-                <p class="input">
+                <p id="input">
                   <ion-icon name="person-outline"></ion-icon>
-                  <input name="username" type="text" placeholder="Userame" />
+                  <input id="name" name="username" type="text" placeholder="Username" value="" />
                 </p>
-                <p class="input">
+                <?php displayError('username'); ?>
+                <p id="input">
                   <ion-icon name="mail-outline"></ion-icon>
-                  <input name="email" type="email" placeholder="Email" />
+                  <input name="email" type="email" placeholder="Email" value="" />
                 </p>
-                <p class="input">
+                <?php displayError('email'); ?>
+                <p id="input">
                   <ion-icon name="eye-outline"></ion-icon>
                   <ion-icon name="eye-off-outline"></ion-icon>
-                  <input
-                    id="pwdSignup"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                  />
+                  <input id="pwdSignup" name="password" type="password" placeholder="Password" />
                 </p>
+               <?php displayError('password'); ?>
                 <input class="submit-btn" type="submit" value="Sign Up" />
               </form>
             </div>
           </div>
+
           <!-- Login Box -->
           <div class="back" id="loginForm">
             <div class="login" id="login">
               <h1>Sign In</h1>
               <form action="./Assets/PHP/login.php" method="POST">
-                <p class="input">
+                <p id="input">
                   <ion-icon name="mail-outline"></ion-icon>
                   <input name="email" type="email" placeholder="Email" />
                 </p>
 
-                <p class="input">
+                <p id="input">
                   <ion-icon name="eye-outline"></ion-icon>
                   <ion-icon name="eye-off-outline"></ion-icon>
-                  <input
-                    id="pwdLogin"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                  /><br />
+                  <input id="pwdLogin" name="password" type="password" placeholder="Password" /><br />
                 </p>
                 <a id="forgot-pass" href="#">Forgot your password?</a><br />
                 <input class="submit-btn" type="submit" value="Sign In" />
@@ -131,6 +134,7 @@
         </div>
       </div>
     </section>
+    <?php unset($_SESSION['errors']); // Clear errors after displaying ?>
+    <script src="./Assets/Scripts/app.js"></script>
   </body>
-  <script src="./Assets/Scripts/app.js"></script>
 </html>
