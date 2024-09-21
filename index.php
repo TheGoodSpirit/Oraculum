@@ -120,7 +120,6 @@
                   <ion-icon name="mail-outline"></ion-icon>
                   <input name="email" type="email" placeholder="Email" />
                 </p>
-
                 <p id="input">
                   <ion-icon name="eye-outline"></ion-icon>
                   <ion-icon name="eye-off-outline"></ion-icon>

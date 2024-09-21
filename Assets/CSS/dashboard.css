@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 2fr 50px;
+    align-items: center;
+    background-color: #ccc;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.profile-icon {
+    background-color: #555;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tabs button:hover {
+    background-color: #bbb;
+}
+
+.content-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 400px;
+    padding: 20px;
+}

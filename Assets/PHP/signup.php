@@ -38,7 +38,7 @@
             // If errors exist, store them in session and return to form
             $_SESSION['errors'] = $errors;
             header('Location: ../../index.php');
-            exit();  // Ensure no further code runs after redirect
+
         }
     }
 
