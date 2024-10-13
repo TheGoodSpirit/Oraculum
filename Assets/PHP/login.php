@@ -27,7 +27,9 @@
                 echo "User not found!";
             }
         } else {
-            echo "Please enter all your details";
+            $login_error = "";
+            $_SESSION['login_error'] = $login_error;
+            header('Location:./error.php');
         }
     }
     require './closeConnection.php';

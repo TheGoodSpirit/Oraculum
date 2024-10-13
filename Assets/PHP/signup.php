@@ -8,7 +8,7 @@
         $pass = $_POST['password'];  // Store plain password for validation
         $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
-        $errors = [];
+        $errors = []; 
 
         // Username Validation: 3-16 characters (alphanumeric only)
         if (!preg_match("/^[a-zA-Z]{3,16}$/", $user)) {
@@ -38,9 +38,7 @@
             // If errors exist, store them in session and return to form
             $_SESSION['errors'] = $errors;
             header('Location: ../../index.php');
-
         }
     }
-
     require 'closeConnection.php';
 ?>

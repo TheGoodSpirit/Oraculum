@@ -101,6 +101,7 @@
                 </p>
                 <?php displayError('email'); ?>
                 <p id="input">
+                  <!-- <ion-icon name="home-outline"></ion-icon> -->
                   <ion-icon name="eye-outline"></ion-icon>
                   <ion-icon name="eye-off-outline"></ion-icon>
                   <input id="pwdSignup" name="password" type="password" placeholder="Password" />
@@ -128,6 +129,9 @@
                 <a id="forgot-pass" href="#">Forgot your password?</a><br />
                 <input class="submit-btn" type="submit" value="Sign In" />
               </form>
+              <?php $_SESSION['login_error'] = "please enter all the details.";
+                echo $_SESSION['login_error'];
+              ?>
             </div>
           </div>
         </div>
