@@ -31,7 +31,9 @@ if (!isset($_SESSION['user_email'])) {
             <div class="search-bar">
                 <input type="text" placeholder="Search">
             </div>
-            <div class="profile-icon"></div>
+            <div class="profile-icon">
+                <?php echo $_SESSION['user_name']; ?>
+            </div>
         </header>
 
         <!-- Sidebar Section -->
@@ -41,17 +43,32 @@ if (!isset($_SESSION['user_email'])) {
 
         <!-- Main Content Section -->
         <main class="main-content">
-            <h1>Main Content</h1>
-            <?php echo $_SESSION['user_name']; ?></h1>
             <div class="tabs">
-                <button>View Questions</button>
-                <button>Saved Answers</button>
-                <button>Other Tab</button>
+                <button>Post Questions</button>
+                <button>Browse Questions</button>
+                <button>Saved Questions</button>
+                <button>My Questions</button>
             </div>
 
             <!-- Content Box -->
             <div class="content-box">
-                <!-- Content goes here -->
+                <div class="postQuestions">
+                    <h1>Post Questions</h1>
+                    <form action="../PHP/postQuestions.php" method="POST">
+                        <p>
+                            <input type="text" name="title" placeholder="title">
+                        </p>
+                        <p>
+                            <textarea name="body" id="body" placeholder="body"></textarea>
+                        </p>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <hr>
+                <div class="browseQuestions">
+                    <h1>Browse Questions</h1>
+                    <?php require '../PHP/browseQuestions.php';?>
+                </div>  
             </div>
         </main>
     </div>

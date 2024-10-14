@@ -12,11 +12,13 @@
 
         if ($email != "" && $password != "") {
             if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
+                $row = $result->fetch_assoc();
                 if (password_verify($password, $row['password'])) {
                     // Store user data in session
+                    $_SESSION['user_id'] = $row['uid'];
                     $_SESSION['user_email'] = $row['email'];
                     $_SESSION['user_name'] = $row['username']; 
+                    
 
                     // Redirect to user dashboard
                     header('Location: ../Pages/dashboard.php');

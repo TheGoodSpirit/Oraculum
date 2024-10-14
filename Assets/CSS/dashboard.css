@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 2px;
     box-sizing: border-box;
     text-decoration: none;
     /* border: 1px solid black; */
@@ -62,13 +62,16 @@
     font-size: 18px;
     cursor: pointer;
 }
-
 .sidebar {
     grid-area: sidebar;
    
 }
-
 .main-content {
     grid-area: main;
-   
+}
+.content-box{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
