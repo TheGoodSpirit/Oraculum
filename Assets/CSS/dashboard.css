@@ -70,8 +70,7 @@
     grid-area: main;
 }
 .content-box{
+    gap: 20px;
     display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: center;
 }

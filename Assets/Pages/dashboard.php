@@ -64,10 +64,13 @@ if (!isset($_SESSION['user_email'])) {
                         <input type="submit" value="Submit">
                     </form>
                 </div>
-                <hr>
                 <div class="browseQuestions">
                     <h1>Browse Questions</h1>
                     <?php require '../PHP/browseQuestions.php';?>
+                </div>
+                <div class="myQuestions">
+                    <h1>My Questions</h1>
+                    <?php require '../PHP/myQuestions.php'; ?>
                 </div>  
             </div>
         </main>

@@ -10,12 +10,15 @@
 
     $sql = "INSERT INTO questions (user_id, title, body) VALUES ('$user_id', '$title', '$body')";
 
-    if ($conn->query($sql)) {
+    if($title != "" && $body != "") {
+         if ($conn->query($sql)) {
         echo "question submitted successsfully.";
+        }
+        header('Location: ../Pages/dashboard.php');
+    } else {
+        echo "Please fill up the all input fields.";
     }
-
-     // Redirect to user dashboard
-    header('Location: ../Pages/dashboard.php');
+   
 
     require './closeConnection.php';
 ?>
