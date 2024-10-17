@@ -14,13 +14,16 @@
         while ($row = $result->fetch_assoc()) {
             if($row['user_id'] === $_SESSION['user_id']) {
                     $count += 1;
-                    echo "<div class='question'>";
-                    echo "<ul> <li>";
-                    echo "<h3>" . $row['title'] . "</h3>";
-                    echo "<p>" . $row['body'] . "</p>";
-                    echo "<p>Asked by: " . $row['username'] . "</p>";
-                    echo "</li></u/>";
-                    echo "</div>";  
+                     $title = $row['title'];
+                $body = $row['body'];
+                echo "<div class='question'>";
+                echo "<ul> <li>";
+                echo "<h3>" . $row['title'] . "</h3>";
+                echo "<p>" . $row['body'] . "</p>";
+                echo "<p>Asked by: " . $row['username'] . "</p>";
+                echo "</li></u/>";
+                echo "</div>";
+                echo "<a href='../PHP/answerQuestions.php?title=$title&body=$body'>details</a>"; 
             } 
         }
     } 

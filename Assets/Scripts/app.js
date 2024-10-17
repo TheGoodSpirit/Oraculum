@@ -32,4 +32,3 @@ let passwordVisibility = (hide, show, ele) => {
 };
 passwordVisibility(2, 3, "pwdSignup");
 passwordVisibility(5, 6, "pwdLogin");
-
