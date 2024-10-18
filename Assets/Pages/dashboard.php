@@ -12,16 +12,15 @@ if (!isset($_SESSION['user_email'])) {
         <!-- Main Content Section -->
         <main class="main-content">
             <div class="tabs">
-                <button>Post Questions</button>
-                <button>Browse Questions</button>
-                <button>Saved Questions</button>
-                <button>My Questions</button>
+                <button class="active" id="bq_btn">Browse Questions</button>
+                <button id="pq_btn">Post Questions</button>
+                <button id="sq_btn">Saved Questions</button>
+                <button id="mq_btn">My Questions</button>
             </div>
 
             <!-- Content Box -->
             <div class="content-box">
-                <div class="postQuestions">
-                    <h1>Post Questions</h1>
+                <div class="postQuestions" id="postQuestions">
                     <form action="../PHP/postQuestions.php" method="POST">
                         <p>
                             <input type="text" name="title" placeholder="title">
@@ -32,16 +31,17 @@ if (!isset($_SESSION['user_email'])) {
                         <input type="submit" value="Submit">
                     </form>
                 </div>
-                <div class="browseQuestions">
-                    <h1>Browse Questions</h1>
-                    <?php require '../PHP/browseQuestions.php';?>
+                <div class="browseQuestions" id="browseQuestions">
+                    <div class="ques">
+                        <?php require '../PHP/browseQuestions.php';?>
+                    </div>
                 </div>
-                <div class="myQuestions">
-                    <h1>My Questions</h1>
+                <div class="myQuestions" id="myQuestions">
                     <?php require '../PHP/myQuestions.php'; ?>
                 </div>  
             </div>
         </main>
     </div>
 </body>
+<script src="../Scripts/dashboardScript.js"></script>
 </html>

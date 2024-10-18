@@ -13,17 +13,22 @@
         // Loop through and display the questions
         while ($row = $result->fetch_assoc()) {
             if($row['user_id'] === $_SESSION['user_id']) {
-                    $count += 1;
-                     $title = $row['title'];
+                $count += 1;
+                $title = $row['title'];
                 $body = $row['body'];
-                echo "<div class='question'>";
-                echo "<ul> <li>";
-                echo "<h3>" . $row['title'] . "</h3>";
-                echo "<p>" . $row['body'] . "</p>";
-                echo "<p>Asked by: " . $row['username'] . "</p>";
-                echo "</li></u/>";
-                echo "</div>";
-                echo "<a href='../PHP/answerQuestions.php?title=$title&body=$body'>details</a>"; 
+                 echo "
+                    <div class='question'>
+                        <div class='image'></div>
+                        <div class='content'>
+                            <h3 class='title'>" . $title . "</h3>
+                            <p class='desc'>" . $body . "</p>
+                            <p class='desc'>Asked by: " . $row['username'] . "</p>
+                            <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body'>
+                                Find out more
+                                <span aria-hidden='true'>→</span>
+                            </a>
+                        </div>
+                    </div>";
             } 
         }
     } 

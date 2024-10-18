@@ -10,18 +10,14 @@
             <div class='question'>
                 <div class='image'></div>
                 <div class='content'>
-                     <ul>
-                        <li>
-                            <h3>" . $title . "</h3>
-                            <p>" . $body . "</p>
-                            <p>Asked by: " . $row['username'] . "</p>
-                        </li>
-                    </u/>
+                    <h3 class='title'>" . $title . "</h3>
+                    <p class='desc'>" . $body . "</p>
+                    <p class='desc'>Asked by: " . $row['username'] . "</p>
+                    <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body'>
+                        Find out more
+                        <span aria-hidden='true'>→</span>
+                    </a>
                 </div>
-                <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body'>
-                    Find out more
-                    <span aria-hidden='true'>→</span>
-                </a>
             </div>";
         }
     } else {
