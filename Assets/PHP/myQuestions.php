@@ -3,7 +3,7 @@
     require '../PHP/startConnection.php';
 
     $count = 0;
-    $query = "SELECT q.user_id, q.question_id, q.title, q.body, u.username FROM questions q JOIN users u ON q.user_id = u.uid";
+    $query = "SELECT q.question_id, q.title, q.body, u.username, q.user_id FROM questions q JOIN users u ON q.user_id = u.uid";
 
     // Execute the query
     $result = $conn->query($query);
@@ -16,15 +16,16 @@
                 $count += 1;
                 $title = $row['title'];
                 $body = $row['body'];
+                $uid = $row['user_id'];
+                $uname = $row['username'];
                  echo "
                     <div class='question'>
-                        <div class='image'></div>
                         <div class='content'>
                             <h3 class='title'>" . $title . "</h3>
                             <p class='desc'>" . $body . "</p>
                             <p class='desc'>Asked by: " . $row['username'] . "</p>
-                            <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body'>
-                                Find out more
+                            <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
+                                Details
                                 <span aria-hidden='true'>→</span>
                             </a>
                         </div>

@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "oraculum2";
+    $dbname = "test_oraculum";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
