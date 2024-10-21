@@ -10,18 +10,19 @@
             $uname = $row['username'];
             $qid = $row['question_id'];
             
-            echo "
-            <div class='question'>
-                <div class='content'>
+           echo "
+            <div class='question-card'>
+                <div class='card-content'>
                     <h3 class='title'>" . $title . "</h3>
-                    <p class='desc'>" . $body . "</p>
+                    <p class='body'>" . substr($body, 0, 100) . "...</p> <!-- Truncate body text -->
                     <p class='desc'>Asked by: " . $uname . "</p>
-                    <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
-                        Details
+                    <a class='details-link' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
+                        Read More
                         <span aria-hidden='true'>→</span>
                     </a>
                 </div>
             </div>";
+
         }
     } else {
         echo "No questions found.";

@@ -21,4 +21,4 @@
    
 
     require './closeConnection.php';
-?>
+?>  

@@ -18,15 +18,20 @@
                 $body = $row['body'];
                 $uid = $row['user_id'];
                 $uname = $row['username'];
-                 echo "
-                    <div class='question'>
-                        <div class='content'>
+                $qid = $row['question_id'];
+                
+                    echo "
+                    <div class='question-card'>
+                        <div class='card-content'>
                             <h3 class='title'>" . $title . "</h3>
-                            <p class='desc'>" . $body . "</p>
-                            <p class='desc'>Asked by: " . $row['username'] . "</p>
-                            <a class='action' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
-                                Details
+                            <p class='body'>" . substr($body, 0, 100) . "...</p> <!-- Truncate body text -->
+                            <p class='desc'>Asked by: " . $uname . "</p>
+                            <a class='details-link' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
+                                Read More
                                 <span aria-hidden='true'>→</span>
+                            </a>
+                            <a class='action' href='../PHP/deleteQuestion.php?question_id=$qid'>
+                                Delete
                             </a>
                         </div>
                     </div>";

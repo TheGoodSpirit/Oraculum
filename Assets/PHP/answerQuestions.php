@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/answerQuestion.css">
 </head>
 <body>
+
     <div class="container">
         <!-- Question Details -->
         <div class="question-details">

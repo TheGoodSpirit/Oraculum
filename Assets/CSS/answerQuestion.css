@@ -1,70 +1,70 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .question-details h1 {
-    color: #2c3e50;
+  color: #2c3e50;
 }
 
 .question-details .question-body {
-    font-size: 16px;
-    margin-top: 10px;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .posted-by {
-    font-size: 12px;
-    color: #7f8c8d;
+  font-size: 12px;
+  color: #7f8c8d;
 }
 
 .answer-section {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .answer-section h2 {
-    color: #2980b9;
+  color: #4caf50;
 }
 
 .answer-section textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .answer-section input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .existing-answers {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .existing-answers .answer {
-    margin-bottom: 20px;
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .answered-by {
-    font-size: 12px;
-    color: #7f8c8d;
+  font-size: 12px;
+  color: #7f8c8d;
 }

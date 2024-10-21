@@ -22,13 +22,9 @@ if (!isset($_SESSION['user_email'])) {
             <div class="content-box">
                 <div class="postQuestions" id="postQuestions">
                     <form action="../PHP/postQuestions.php" method="POST">
-                        <p>
-                            <input type="text" name="title" placeholder="title">
-                        </p>
-                        <p>
-                            <textarea name="body" id="body" placeholder="body"></textarea>
-                        </p>
-                        <input type="submit" value="Submit">
+                        <input type="text" name="title" placeholder="Enter your question title" class="input-title" required />
+                        <textarea name="body" placeholder="Describe your question in detail..." class="input-body" required></textarea>
+                        <input type="submit" value="Submit" class="submit-btn" />
                     </form>
                 </div>
                 <div class="browseQuestions" id="browseQuestions">
