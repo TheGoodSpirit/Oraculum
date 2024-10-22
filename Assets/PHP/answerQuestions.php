@@ -44,17 +44,27 @@
                 // display answers
                 require './startConnection.php';
                $answer_query = "
-                    SELECT a.body, u.username 
-                    FROM answers a 
+                    SELECT a.answer_id, a.body, a.votes, u.username 
+                    FROM answers a
                     JOIN users u ON a.user_id = u.uid 
-                    WHERE a.question_id = $qid";
+                    WHERE a.question_id = $qid
+                    ORDER BY a.votes DESC";
                 $answer_result = $conn->query($answer_query);
                 if ($answer_result->num_rows > 0) {
                 while ($answer = $answer_result->fetch_assoc()) {
-                    echo "<div class='answer'>";
-                    echo "<p>" . $answer['body'] . "</p>";
-                    echo "<p class='answered-by'>Answered by: " . $answer['username'] . "</p>"; 
-                    echo "</div>";
+                    $answer_id = $answer['answer_id'];
+                    $answer_body = $answer['body'];
+                    $votes = $answer['votes'];
+                    $username = $answer['username'];
+                    
+                    echo "
+                    <div class='answer'>
+                        <p>" . $answer_body . "</p>
+                        <p class='answered-by'>Answered by: " . $username . "</p>
+                        <p class='votes'>Votes: " . $votes . "</p>
+                        <button class='vote-btn' onclick='vote($answer_id, 1)'>Upvote</button>
+                        <button class='vote-btn' onclick='vote($answer_id, -1)'>Downvote</button>
+                    </div>";
                 }
             } else {
                 echo "<p>No answers yet. Be the first to answer!</p>";
@@ -64,4 +74,5 @@
         </div>
     </div>
 </body>
+<script src="../Scripts/answerCount.js"></script>
 </html>
