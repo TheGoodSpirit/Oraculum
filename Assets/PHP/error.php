@@ -1,5 +1,6 @@
 <?php
 
-    echo "Error occured.";
+   $errorMsg = $_GET['msg'];
+   echo $errorMsg;
 
 ?>
