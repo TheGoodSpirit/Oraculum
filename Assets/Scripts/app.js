@@ -12,23 +12,21 @@ toSignup.addEventListener("click", () => {
   coverCard[1].style.transform = "rotateY(0deg)";
 });
 
-let eyeIcon = document.getElementsByTagName("ion-icon");
-let passwordVisibility = (hide, show, ele) => {
-  let pwd = document.getElementById(`${ele}`);
-  eyeIcon[hide].style.display = "none";
-  eyeIcon[show].style.display = "block";
-
-  eyeIcon[hide].addEventListener("click", () => {
+let passwordVisibility = (showIconId, hideIconId, inputId) => {
+  let pwd = document.getElementById(inputId);
+  let showIcon = document.getElementById(showIconId);
+  let hideIcon = document.getElementById(hideIconId);
+  showIcon.style.display = "none";
+  showIcon.addEventListener("click", () => {
     pwd.type = "password";
-    eyeIcon[hide].style.display = "none";
-    eyeIcon[show].style.display = "block";
+    showIcon.style.display = "none";
+    hideIcon.style.display = "block"; 
   });
-
-  eyeIcon[show].addEventListener("click", () => {
-    pwd.type = "text";
-    eyeIcon[hide].style.display = "block";
-    eyeIcon[show].style.display = "none";
+  hideIcon.addEventListener("click", () => {
+    pwd.type = "text"; 
+    hideIcon.style.display = "none"; 
+    showIcon.style.display = "block";
   });
 };
-passwordVisibility(2, 3, "pwdSignup");
-passwordVisibility(5, 6, "pwdLogin");
+passwordVisibility("eyeSignup", "eyeOffSignup", "pwdSignup");
+passwordVisibility("eyeLogin", "eyeOffLogin", "pwdLogin");

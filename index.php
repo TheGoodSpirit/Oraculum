@@ -101,9 +101,17 @@
                 </p>
                 <?php displayError('email'); ?>
                 <p id="input">
-                  <!-- <ion-icon name="home-outline"></ion-icon> -->
-                  <ion-icon name="eye-outline"></ion-icon>
-                  <ion-icon name="eye-off-outline"></ion-icon>
+                  <ion-icon name="school-outline"></ion-icon>
+                  <input list="faculties" name="faculty" id="faculty" placeholder="Faculty Name">
+                  <datalist id="faculties">
+                    <option value="BBS">
+                    <option value="BCA">
+                    <option value="B.ED">
+                  </datalist>
+                </p>
+                <p id="input">
+                  <ion-icon id="eyeSignup"  name="eye-outline"></ion-icon>
+                  <ion-icon  id="eyeOffSignup" name="eye-off-outline"></ion-icon>
                   <input id="pwdSignup" name="password" type="password" placeholder="Password" />
                 </p>
                <?php displayError('password'); ?>
@@ -122,9 +130,9 @@
                   <input name="email" type="email" placeholder="Email" />
                 </p>
                 <p id="input">
-                  <ion-icon name="eye-outline"></ion-icon>
-                  <ion-icon name="eye-off-outline"></ion-icon>
-                  <input id="pwdLogin" name="password" type="password" placeholder="Password" /><br />
+                    <ion-icon id="eyeLogin"  name="eye-outline"></ion-icon>
+                    <ion-icon  id="eyeOffLogin" name="eye-off-outline"></ion-icon>
+                    <input id="pwdLogin" name="password" type="password" placeholder="Password" /><br />
                 </p>
                 <a id="forgot-pass" href="#">Forgot your password?</a><br />
                 <input class="submit-btn" type="submit" value="Sign In" />

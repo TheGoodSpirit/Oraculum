@@ -5,7 +5,8 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $_POST['username'];
         $email = $_POST['email'];
-        $pass = $_POST['password'];  // Store plain password for validation
+        $pass = $_POST['password']; 
+        $faculty = $_POST['faculty'];
         $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
         $errors = []; 
@@ -27,7 +28,7 @@
 
         // If no errors, proceed with the SQL query
         if (empty($errors)) {
-            $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$hashedPass')";
+            $sql = "INSERT INTO users (username, email, password, faculty) VALUES ('$user', '$email', '$hashedPass', '$faculty')";
             
             if ($conn->query($sql)) {
                 header('Location: ../../index.php');  // Redirect on successful signup

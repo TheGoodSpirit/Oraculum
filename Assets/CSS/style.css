@@ -6,6 +6,7 @@
   font-family: "Ubuntu", sans-serif;
 }
 ion-icon {
+  color: #fff;
   font-size: 1.5rem;
 }
 section {
@@ -17,11 +18,9 @@ section {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    120deg,
-    rgb(112, 217, 235) 60%,
-    rgb(92, 98, 212) 88%
-  );
+  background: url("../Images/27257316_7290759.jpg");
+  background-position: center;
+  background-size: cover;
 }
 .cover {
   width: 500px;
@@ -33,7 +32,7 @@ section {
   width: 100%;
   height: 70vh;
   text-align: center;
-  /* transition: transform 0.8s; */
+  /* transition: transform 0.5s; */
   transform-style: preserve-3d;
 }
 .intro {
@@ -63,8 +62,8 @@ section {
   padding: 15px 50px;
   flex-direction: column;
   justify-content: center;
-  backface-visibility: hidden;
   background-color: #fff;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 .back {
@@ -76,7 +75,9 @@ section {
 }
 #signupForm,
 #loginForm {
+  color: #ffffff;
   border-radius: 0px 20px 20px 0px;
+  background: #313036;
 }
 
 /* Forms */
@@ -95,15 +96,17 @@ input {
   padding: 10px 20px;
   align-items: center;
   border-radius: 10px;
+  background-color: #413f47;
   transition: 0.2s ease-in-out;
-  border: 1.5px solid #ecefec;
+  border: 1.5px solid #413f47;
 }
 input {
   border: none;
   outline: none;
+  color: #fff;
 }
 #input:focus-within {
-  border: 1.5px solid #2d79f3;
+  border: 1.5px solid #ffffff;
 }
 .submit-btn {
   height: 50px;
