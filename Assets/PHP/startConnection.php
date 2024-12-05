@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "122333";
-    $dbname = "oraculum";
+    $password = "";
+    $dbname = "test1";
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
