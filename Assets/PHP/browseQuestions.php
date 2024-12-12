@@ -20,6 +20,10 @@
                         Read More
                         <span aria-hidden='true'>→</span>
                     </a>
+                    <a class='details-link' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
+                        save
+                        <span aria-hidden='true'>→</span>
+                    </a>
                 </div>
             </div>";
 

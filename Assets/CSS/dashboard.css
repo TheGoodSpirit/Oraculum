@@ -188,7 +188,8 @@ body {
   display: block;
 }
 .myQuestions,
-.postQuestions {
+.postQuestions,
+.savedQuestions {
   display: none;
 }
 .post-question {
@@ -234,6 +235,6 @@ body {
 
 input:focus,
 textarea:focus {
-  border-color: #4caf50;
+  border-color: #13186b;
   outline: none;
 }

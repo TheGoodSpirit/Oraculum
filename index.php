@@ -100,7 +100,7 @@
                   <input name="email" type="email" placeholder="Email" value="" />
                 </p>
                 <?php displayError('email'); ?>
-                <p id="input">
+                <!-- <p id="input">
                   <ion-icon name="school-outline"></ion-icon>
                   <input list="faculties" name="faculty" id="faculty" placeholder="Faculty Name">
                   <datalist id="faculties">
@@ -108,7 +108,7 @@
                     <option value="BCA">
                     <option value="B.ED">
                   </datalist>
-                </p>
+                </p> -->
                 <p id="input">
                   <ion-icon id="eyeSignup"  name="eye-outline"></ion-icon>
                   <ion-icon  id="eyeOffSignup" name="eye-off-outline"></ion-icon>

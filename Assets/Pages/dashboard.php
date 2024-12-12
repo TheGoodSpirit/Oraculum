@@ -35,6 +35,9 @@ if (!isset($_SESSION['user_email'])) {
                 <div class="myQuestions" id="myQuestions">
                     <?php require '../PHP/myQuestions.php'; ?>
                 </div>  
+                <div class="savedQuestions" id="savedQuestions">
+                    <?php require '../PHP/savedQuestions.php'; ?>
+                </div>
             </div>
         </main>
     </div>
