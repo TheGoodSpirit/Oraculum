@@ -1,22 +1,15 @@
 <?php
     session_start();
     require 'startConnection.php';
-    // require '../../vendor/autoload.php';
-
-    // require '../PHPMailer/src/Exception.php';
-    // require '../PHPMailer/src/PHPMailer.php';
-    // require '../PHPMailer/src/SMTP.php';
-
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // use PHPMailer\PHPMailer\Exception;
-
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $_POST['username'];
         $email = $_POST['email'];
         $pass = $_POST['password']; 
-        $faculty = $_POST['faculty'];
+        // $faculty = $_POST['faculty'];
         $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
+
+        $_SESSION['signupEmail'] = $email;
 
         $errors = []; 
 
@@ -40,7 +33,7 @@
             $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$hashedPass')";
             
             if ($conn->query($sql)) {
-                header('Location: ../../index.php');  // Redirect on successful signup
+                header('Location: ./sendEmail.php');  // Redirect on successful signup
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
