@@ -10,7 +10,7 @@
     <main>
         <header class="navigation-bar"></header>
         <section class="hero"></section>
-        <section class="feature-highlights"></section>
+        <section class="feature-highlights">hi</section>
         <section class="popular-questions"></section>
         <footer class="footer"></footer>
     </main>
