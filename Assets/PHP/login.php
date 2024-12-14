@@ -1,37 +1,36 @@
 <?php
-    session_start();  
-
+    session_start();
     require './startConnection.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
+        echo 'something';
+        $email = trim($_POST['email']);
         $password = $_POST['password'];
+    
 
-        $sql = "SELECT * FROM users WHERE email = '$email'";
-        $result = $conn->query($sql);
 
         if ($email != "" && $password != "") {
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                if (password_verify($password, $row['password'])) {
-                    // Store user data in session
-                    $_SESSION['user_id'] = $row['uid'];
-                    $_SESSION['user_email'] = $row['email'];
-                    $_SESSION['user_name'] = $row['username']; 
-                    
+            // Check if the user exists and is verified
+            $query = "SELECT * FROM users WHERE email = '$email' AND is_active = 1";
+            $result = mysqli_query($conn, $query);
 
-                    // Redirect to user dashboard
+            if (mysqli_num_rows($result) === 1) {
+                $user = mysqli_fetch_assoc($result);
+                if (password_verify($password, $user['password'])) {
+                    $_SESSION['user_id'] = $user['uid'];
                     header('Location: ../Pages/dashboard.php');
+                    exit;
                 } else {
-                    echo "Invalid password!";
+                    echo "Incorrect password.";
                 }
             } else {
-                echo "User not found!";
+                echo "Your account is not verified. Please check your email.";
+                echo "<br> <a href='./verification.php'>Click here</a> to verify.";
             }
         } else {
-             header('Location: ../../index.php');
-            $_SESSION['login_error'] = 1 ;
+            echo "Please enter all your details.";
         }
+         
     }
     require './closeConnection.php';
 ?>

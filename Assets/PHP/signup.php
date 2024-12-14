@@ -5,11 +5,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $_POST['username'];
         $email = $_POST['email'];
-        $pass = $_POST['password']; 
-        // $faculty = $_POST['faculty'];
+        $pass = $_POST['password'];
         $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
         $_SESSION['signupEmail'] = $email;
+        $verification_code = rand(100000, 999999);
+        $_SESSION['verification_code'] = $verification_code;
+        $is_active = 0; 
 
         $errors = []; 
 
@@ -30,10 +32,10 @@
 
         // If no errors, proceed with the SQL query
         if (empty($errors)) {
-            $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$hashedPass')";
+            $sql = "INSERT INTO users (username, email, password, is_active, verification_code) VALUES ('$user','$email', '$hashedPass', $is_active, '$verification_code')";
             
             if ($conn->query($sql)) {
-                header('Location: ./sendEmail.php');  // Redirect on successful signup
+                header('Location: ./sendEmail.php');  
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
