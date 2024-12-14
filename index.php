@@ -92,27 +92,18 @@
               <form action="./Assets/PHP/signup.php" method="POST">
                 <p id="input">
                   <ion-icon name="person-outline"></ion-icon>
-                  <input id="name" name="username" type="text" placeholder="Username" value="" />
+                  <input id="name" name="username" type="text" placeholder="Username" value="<?php echo $_SESSION['signIn_uname'] ?>" />
                 </p>
                 <?php displayError('username'); ?>
                 <p id="input">
                   <ion-icon name="mail-outline"></ion-icon>
-                  <input name="email" type="email" placeholder="Email" value="" />
+                  <input name="email" type="email" placeholder="Email" value="<?php echo $_SESSION['signIn_email'] ?>" />
                 </p>
                 <?php displayError('email'); ?>
-                <!-- <p id="input">
-                  <ion-icon name="school-outline"></ion-icon>
-                  <input list="faculties" name="faculty" id="faculty" placeholder="Faculty Name">
-                  <datalist id="faculties">
-                    <option value="BBS">
-                    <option value="BCA">
-                    <option value="B.ED">
-                  </datalist>
-                </p> -->
                 <p id="input">
                   <ion-icon id="eyeSignup"  name="eye-outline"></ion-icon>
                   <ion-icon  id="eyeOffSignup" name="eye-off-outline"></ion-icon>
-                  <input id="pwdSignup" name="password" type="password" placeholder="Password" />
+                  <input id="pwdSignup" name="password" type="password" placeholder="Password" value="<?php echo $_SESSION['signIn_pass'] ?>" />
                 </p>
                <?php displayError('password'); ?>
                 <input class="submit-btn" type="submit" value="Sign Up" />

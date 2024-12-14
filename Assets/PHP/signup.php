@@ -8,6 +8,10 @@
         $pass = $_POST['password'];
         $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
+        $_SESSION['signIn_uname'] =  $user;
+        $_SESSION['signIn_email'] = $email;
+        $_SESSION['signIn_pass'] = $pass;
+
         $_SESSION['signupEmail'] = $email;
         $verification_code = rand(100000, 999999);
         $_SESSION['verification_code'] = $verification_code;
@@ -35,7 +39,7 @@
             $sql = "INSERT INTO users (username, email, password, is_active, verification_code) VALUES ('$user','$email', '$hashedPass', $is_active, '$verification_code')";
             
             if ($conn->query($sql)) {
-                header('Location: ./sendEmail.php');  
+                header('Location: ./sendEmail.php');
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

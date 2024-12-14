@@ -63,7 +63,6 @@
                         <p class='answered-by'>Answered by: " . $username . "</p>
                         <p class='votes'>Votes: " . $votes . "</p>
                         <button class='vote-btn' onclick='vote($answer_id, 1)'>Upvote</button>
-                        <button class='vote-btn' onclick='vote($answer_id, -1)'>Downvote</button>
                     </div>";
                 }
             } else {
