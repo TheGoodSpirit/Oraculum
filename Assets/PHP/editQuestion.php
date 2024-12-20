@@ -3,9 +3,6 @@
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
     
-    <label for="id">ID:</label>
-    <input type="number" name="id" id="id" required value='<?php echo $_GET['question_id']; ?>'>
-    
     <label for="title">title:</label>
     <input type="text" name="title" id="title" required value='<?php echo $_GET['title']; ?>'>
 

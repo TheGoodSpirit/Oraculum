@@ -1,6 +1,10 @@
 <?php
     session_start();
     require './startConnection.php';
+    if (isset($_SESSION['user_email'])) {
+        header('Location: ../Pages/dashboard.php');  // Redirect to login page if not logged in
+    exit();
+}
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = trim($_POST['email']);
@@ -30,5 +34,7 @@
         }
          
     }
+
+    
     require './closeConnection.php';
 ?>
