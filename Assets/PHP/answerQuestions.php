@@ -12,7 +12,7 @@
         <!-- Question Details -->
         <div class="question-details">
             <?php   
-            session_start();
+                session_start();
                 $title = $_GET['title'];
                 $body = $_GET['body'];
                 $uname = $_GET['uname'];
@@ -37,40 +37,44 @@
             </form>
         </div>
 
-        <!-- Display Existing Answers -->
-        <div class="existing-answers">
-            <h2>Answers:</h2>
-            <?php 
-                // display answers
-                require './startConnection.php';
-               $answer_query = "
-                    SELECT a.answer_id, a.body, a.votes, u.username 
-                    FROM answers a
-                    JOIN users u ON a.user_id = u.uid 
-                    WHERE a.question_id = $qid
-                    ORDER BY a.votes DESC";
-                $answer_result = $conn->query($answer_query);
-                if ($answer_result->num_rows > 0) {
+       <div class="existing-answers">
+        <h2>Answers:</h2>
+        <?php 
+            require './startConnection.php';
+
+            $qid = intval($_GET['qid']); // Ensure the question ID is an integer
+            $answer_query = "
+                SELECT a.answer_id, a.body, a.votes, a.user_id, u.username 
+                FROM answers a
+                JOIN users u ON a.user_id = u.uid 
+                WHERE a.question_id = $qid
+                ORDER BY a.votes DESC";
+            $answer_result = $conn->query($answer_query);
+
+            if ($answer_result && $answer_result->num_rows > 0) {
                 while ($answer = $answer_result->fetch_assoc()) {
                     $answer_id = $answer['answer_id'];
-                    $answer_body = $answer['body'];
+                    $answer_body = htmlspecialchars($answer['body']);
                     $votes = $answer['votes'];
-                    $username = $answer['username'];
-                    
+                    $username = htmlspecialchars($answer['username']);
+                    $user_id = $answer['user_id'];
+
                     echo "
-                    <div class='answer'>
-                        <p>" . $answer_body . "</p>
-                        <p class='answered-by'>Answered by: " . $username . "</p>
-                        <p class='votes'>Votes: " . $votes . "</p>
-                        <button class='vote-btn' onclick='vote($answer_id, 1)'>Upvote</button>
-                    </div>";
+                        <div class='answer'>
+                            <p>" . $answer_body . "</p>
+                            <p class='answered-by'>Answered by: " . $username . "</p>
+                            <p class='votes'>Votes: " . $votes . "</p>
+                            <button class='vote-btn' onclick='vote($answer_id, 1)'>Upvote</button>";
+                            // Show edit button only for the logged-in user
+                            if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $user_id) {
+                                echo "<button class='edit-btn' onclick=\"window.location.href='editAnswers.php?answer_id=$answer_id&title=$title&body=$body&uname=$uname&qid=$qid'\">Edit</button>";
+                            }
+                    echo "</div>";
                 }
             } else {
                 echo "<p>No answers yet. Be the first to answer!</p>";
             }
-            ?>
-            
-        </div>
+        ?>
     </div>
 </body>
 <script src="../Scripts/answerCount.js"></script>

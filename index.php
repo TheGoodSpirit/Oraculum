@@ -1,5 +1,10 @@
 <?php 
   session_start(); 
+  if (isset($_SESSION['user_email'])) {
+        header('Location: ./Assets/Pages/dashboard.php');  // Redirect to login page if not logged in
+    exit();
+  }
+
   function displayError($err) {
     if (isset($_SESSION['errors'][$err])) {
       echo "<span style='color: red; font-size: 0.6rem; text-align: justify;'>{$_SESSION['errors'][$err]}</span>";

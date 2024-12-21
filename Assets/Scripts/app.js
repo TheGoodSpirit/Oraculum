@@ -30,7 +30,3 @@ let passwordVisibility = (showIconId, hideIconId, inputId) => {
 };
 passwordVisibility("eyeSignup", "eyeOffSignup", "pwdSignup");
 passwordVisibility("eyeLogin", "eyeOffLogin", "pwdLogin");
-
-
-
-
