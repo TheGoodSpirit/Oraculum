@@ -17,6 +17,7 @@
                 $body = $_GET['body'];
                 $uname = $_GET['uname'];
                 $qid = $_GET['qid'];
+                $uid = $_GET['uid'];
 
                 echo "<h1>" . $title . "</h1>";
                 echo "<p class='question-body'>" . $body . "</p>";
@@ -67,7 +68,7 @@
                             <button class='vote-btn' onclick='vote($answer_id, 1)'>Upvote</button>";
                             // Show edit button only for the logged-in user
                             if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $user_id) {
-                                echo "<button class='edit-btn' onclick=\"window.location.href='editAnswers.php?answer_id=$answer_id&title=$title&body=$body&uname=$uname&qid=$qid'\">Edit</button>";
+                                echo "<button class='edit-btn' onclick=\"window.location.href='editAnswers.php?answer_id=$answer_id'\">Edit</button>";
                             }
                     echo "</div>";
                 }

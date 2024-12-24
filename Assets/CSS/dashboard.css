@@ -123,7 +123,6 @@ body {
   /* background-color: #f9f9f9; */
   padding: 20px;
 
-
 }
 
 /* Individual question styles */
@@ -237,4 +236,34 @@ input:focus,
 textarea:focus {
   border-color: #13186b;
   outline: none;
+}
+
+
+/* taable */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  padding: 20px;
 }

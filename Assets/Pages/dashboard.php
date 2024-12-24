@@ -28,9 +28,22 @@ if (!isset($_SESSION['user_email'])) {
                     </form>
                 </div>
                 <div class="browseQuestions" id="browseQuestions">
-                    <div class="ques">
-                        <?php require '../PHP/browseQuestions.php';?>
-                    </div>
+                    <form onsubmit="event.preventDefault(); fetchQuestions(document.getElementById('searchInput').value);">
+                        <input type="text" id="searchInput" placeholder="Search..." onkeyup="fetchQuestions(this.value)" />
+                    </form>
+                    <table class="question-table" border="1" cellspacing="5">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>Asked by</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTable">
+                            <!-- Dynamic results will be injected here -->
+                        </tbody>
+                    </table>
                 </div>
                 <div class="myQuestions" id="myQuestions">
                     <?php require '../PHP/myQuestions.php'; ?>

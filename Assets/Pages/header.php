@@ -19,12 +19,25 @@
                 <a href="" class="links">Contact</a>
                 <a href="" class="links">Help</a>
             </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="profile-icon">'
-                .  $_SESSION['user_name'] .
-            '</div>
+            <div class="profile-icon">'.  $_SESSION['user_name'] .'</div>
+            <script>
+                function fetchQuestions(searchValue = "") {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", "../PHP/browseQuestions.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            document.getElementById("resultsTable").innerHTML = xhr.responseText;
+                        }
+                    };
+                    xhr.send("search=" + encodeURIComponent(searchValue));
+                }
+
+                // Fetch all questions when the page loads
+                window.onload = function () {
+                    fetchQuestions();
+                };
+            </script>
         </header>
 
         <!-- Sidebar Section -->

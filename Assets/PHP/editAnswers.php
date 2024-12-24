@@ -52,7 +52,7 @@
         <h1>Edit Your Answer</h1>
         <form action="editAnswers.php?answer_id=<?php echo $answer_id; ?>" method="POST">
             <textarea name="body" rows="5" required><?php echo $existing_body; ?></textarea><br>
-            <input type="hidden" name="question_id" value="<?php echo $_GET['qid']; ?>">
+            <!-- <input type="hidden" name="question_id" value="<?php echo $_GET['qid']; ?>"> -->
             <input type="submit" value="Update Answer">
         </form>
     </div>
