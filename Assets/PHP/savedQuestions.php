@@ -57,21 +57,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $qid = $row['question_id'];
 
             echo "
-            <div class='question-card'>
-                <div class='card-content'>
-                    <h3 class='title'>" . $title . "</h3>
-                    <p class='body'>" . substr($body, 0, 100) . "...</p> <!-- Truncate body text -->
-                    <p class='desc'>Asked by: " . $uname . "</p>
-                    <a class='details-link' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
-                        Read More
-                        <span aria-hidden='true'>→</span>
-                    </a>
-                    <form method='post' action='../PHP/deleteSavedQuestion.php'>
-                        <input type='hidden' name='delete_question_id' value='" . $qid . "'>
-                        <button type='submit' name='delete_question'>Delete</button>
-                    </form>
+            <tr>
+            <td>" . htmlspecialchars($title) . "</td>
+            <td>" . htmlspecialchars(substr($body, 0, 100)) . "...</td> <!-- Truncate body text -->
+            <td>" . htmlspecialchars($uname) . "</td>
+            <td>
+                <div class='actions'>
+                    <a class='details-link btn' href='../PHP/answerQuestions.php?title=" . urlencode($title) . "&body=" . urlencode($body) . "&uid=" . urlencode($uid) . "&uname=" . urlencode($uname) . "&qid=" . urlencode($qid) . "'>
+                    Read More
+                    <span aria-hidden='true'>→</span>
+                </a>
+                <form method='post' action='../PHP/deleteSavedQuestion.php' style='display:inline;'>
+                    <input type='hidden' name='delete_question_id' value='" . htmlspecialchars($qid) . "'>
+                    <button class='btn' type='submit' name='delete_question'>Delete</button>
+                </form>
                 </div>
-            </div>";
+            </td>
+        </tr>";
         }
     } else {
         echo "No saved questions found.";

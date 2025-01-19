@@ -21,23 +21,26 @@
                 $qid = $row['question_id'];
                 
                     echo "
-                    <div class='question-card'>
-                        <div class='card-content'>
-                            <h3 class='title'>" . $title . "</h3>
-                            <p class='body'>" . substr($body, 0, 100) . "...</p> <!-- Truncate body text -->
-                            <p class='desc'>Asked by: " . $uname . "</p>
-                            <a class='details-link' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
-                                Read More
-                                <span aria-hidden='true'>→</span>
-                            </a>
-                            <a class='action' href='../PHP/deleteQuestion.php?question_id=$qid'>
-                                Delete
-                            </a>
-                           <!--  <a class='action' href='../PHP/editQuestion.php?question_id=$qid&title=$title&body=$body'>
-                                Edit -->
-                            </a>
-                        </div>
-                    </div>";
+                    
+                        <tr>
+                            <td>" . $title . "</td>
+                            <td>" . substr($body, 0, 100) . "...</td>
+                            <td>" . $uname . "</td>
+                            <td>
+                               <div class='actions'>
+                                     <a class='details-link btn' href='../PHP/answerQuestions.php?title=$title&body=$body&uid=$uid&uname=$uname&qid=$qid'>
+                                    Read More
+                                    <span aria-hidden='true'>→</span>
+                                </a>
+                                <a class='action btn' href='../PHP/deleteQuestion.php?question_id=$qid'>
+                                    Delete
+                                </a>
+                                <!-- <a class='action btn' href='../PHP/editQuestion.php?question_id=$qid&title=$title&body=$body'>
+                                    Edit -->
+                                </a>
+                               </div>
+                            </td>
+                        </tr>";
             } 
         }
     } 

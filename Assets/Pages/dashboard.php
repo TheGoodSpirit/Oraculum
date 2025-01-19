@@ -8,25 +8,25 @@ if (!isset($_SESSION['user_email'])) {
 }
 ?>
 <?php require './header.php'; ?>
-
-        <!-- Main Content Section -->
-        <main class="main-content">
-
-            <div id="popup-modal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span id="close-modal" class="close">&times;</span>
-                    <p id="modal-message"></p>
-                </div>
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <section>
+            <div class="msg">
+                <h1>Welcome to Oraculum</h1>
+                <p> Your Gateway to Knowledge and Insight. Explore, Learn, and Stay Informed!</p>
             </div>
+        </section>
+    
+
+        <!-- Content Box -->
+        <div class="content-box">
             <div class="tabs">
-                <button class="active" id="bq_btn">Browse Questions</button>
-                <button id="pq_btn">Post Questions</button>
-                <button id="sq_btn">Saved Questions</button>
-                <button id="mq_btn">My Questions</button>
+                <button class="btn active" id="bq_btn">Browse Questions</button>
+                <button id="pq_btn" class="btn">Post Questions</button>
+                <button id="sq_btn" class="btn">Saved Questions</button>
+                <button id="mq_btn" class="btn">My Questions</button>
             </div>
-
-            <!-- Content Box -->
-            <div class="content-box">
+            <center>
                 <div class="postQuestions" id="postQuestions">
                     <form action="../PHP/postQuestions.php" method="POST">
                         <input type="text" name="title" placeholder="Enter your question title" class="input-title" required />
@@ -35,9 +35,11 @@ if (!isset($_SESSION['user_email'])) {
                     </form>
                 </div>
                 <div class="browseQuestions" id="browseQuestions">
-                    <form onsubmit="event.preventDefault(); fetchQuestions(document.getElementById('searchInput').value);">
-                        <input type="text" id="searchInput" placeholder="Search..." onkeyup="fetchQuestions(this.value)" />
-                    </form>
+                    <div class="searchBox">
+                         <form onsubmit="event.preventDefault(); fetchQuestions(document.getElementById('searchInput').value);">
+                            <input type="text" id="searchInput" placeholder="Search..." onkeyup="fetchQuestions(this.value)" />
+                        </form>
+                    </div>
                     <table class="question-table" border="1" cellspacing="5">
                         <thead>
                             <tr>
@@ -51,14 +53,38 @@ if (!isset($_SESSION['user_email'])) {
                     </table>
                 </div>
                 <div class="myQuestions" id="myQuestions">
-                    <?php require '../PHP/myQuestions.php'; ?>
+                     <table class="question-table" border="1" cellspacing="5">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>Asked by</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <?php require '../PHP/myQuestions.php'; ?>
+                        </tbody>
+                    </table>
                 </div>  
                 <div class="savedQuestions" id="savedQuestions">
-                    <?php require '../PHP/savedQuestions.php'; ?>
+                    <table class="question-table" border="1" cellspacing="5">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>Asked by</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php require '../PHP/savedQuestions.php'; ?>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </main>
-    </div>
+            </center>
+        </div>
+    </main>
 </body>
 <script src="../Scripts/dashboardScript.js"></script>
 </html>

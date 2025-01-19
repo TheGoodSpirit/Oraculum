@@ -30,14 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <td>" . htmlspecialchars(substr($body, 0, 100)) . "...</td>
                 <td>" . htmlspecialchars($uname) . "</td>
                 <td>
-                    <a class='details-link' href='../PHP/answerQuestions.php?title=" . urlencode($title) . "&body=" . urlencode($body) . "&uid=" . urlencode($uid) . "&uname=" . urlencode($uname) . "&qid=" . urlencode($qid) . "'>
+                <div class='actions'>
+                    <a  class='details-link btn' href='../PHP/answerQuestions.php?title=" . urlencode($title) . "&body=" . urlencode($body) . "&uid=" . urlencode($uid) . "&uname=" . urlencode($uname) . "&qid=" . urlencode($qid) . "'>
                         Read More
                         <span aria-hidden='true'>→</span>
                     </a>
                     <form method='post' action=''>
                         <input type='hidden' name='save_question_id' value='" . $qid . "'>
-                        <button type='submit' id='save_btn' name='save_question'>Save</button>
+                        <button class='btn' type='submit' id='save_btn' name='save_question'>Save</button>
                     </form>
+                </div>
+                    
                 </td>
             </tr>";
         }

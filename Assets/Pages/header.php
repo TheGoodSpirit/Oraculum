@@ -9,17 +9,14 @@
         <link rel="stylesheet" href="../CSS/dashboard.css">
     </head>
     <body>
-        <div class="container">
         <header class="header">
             <div class="logo">
-                <h1>ORACULUM</h1>
+                <h2>ORACULUM</h2>
             </div>
-            <nav>
-                <a href="" class="links">Dashboard</a>
-                <a href="" class="links">Contact</a>
-                <a href="" class="links">Help</a>
-            </nav>
-            <div class="profile-icon">'.  $_SESSION['user_name'] .'</div>
+            <div class="profile">
+                <a href="" class="profile-name">'. $_SESSION['user_name'] . '</a>
+                 <a class="logout"  href="../PHP/logout.php">LogOut</a>
+            </div>
             <script>
                 function fetchQuestions(searchValue = "") {
                     const xhr = new XMLHttpRequest();
@@ -38,10 +35,5 @@
                     fetchQuestions();
                 };
             </script>
-        </header>
-
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <a href="../PHP/logout.php">LogOut</a>
-        </aside> ';
+        </header>';
 ?>
