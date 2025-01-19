@@ -11,6 +11,13 @@ if (!isset($_SESSION['user_email'])) {
 
         <!-- Main Content Section -->
         <main class="main-content">
+
+            <div id="popup-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="close-modal" class="close">&times;</span>
+                    <p id="modal-message"></p>
+                </div>
+            </div>
             <div class="tabs">
                 <button class="active" id="bq_btn">Browse Questions</button>
                 <button id="pq_btn">Post Questions</button>
@@ -40,9 +47,7 @@ if (!isset($_SESSION['user_email'])) {
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="resultsTable">
-                            <!-- Dynamic results will be injected here -->
-                        </tbody>
+                        <tbody id="resultsTable"></tbody>
                     </table>
                 </div>
                 <div class="myQuestions" id="myQuestions">

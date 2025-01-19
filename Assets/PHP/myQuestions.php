@@ -33,8 +33,8 @@
                             <a class='action' href='../PHP/deleteQuestion.php?question_id=$qid'>
                                 Delete
                             </a>
-                            <a class='action' href='../PHP/editQuestion.php?question_id=$qid&title=$title&body=$body'>
-                                Edit
+                           <!--  <a class='action' href='../PHP/editQuestion.php?question_id=$qid&title=$title&body=$body'>
+                                Edit -->
                             </a>
                         </div>
                     </div>";
