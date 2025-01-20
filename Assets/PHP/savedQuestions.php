@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </tr>";
         }
     } else {
-        echo "No saved questions found.";
+        echo "<tr><td colspan='4'>No saved questions found.</td></tr>";
     }
 
     

@@ -46,7 +46,7 @@
     } 
 
     if($count == 0) {
-        echo "No questions publishd yet.";
+        echo "<tr><td colspan='4'>No questions publishd yet.</td></tr>";
     }
 
 

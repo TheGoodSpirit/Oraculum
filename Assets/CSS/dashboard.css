@@ -33,7 +33,7 @@
 a {color: #fff;}
 body {
   padding: 20px 50px;
- background-color: #dedcdc;
+ background-color: #525151;
 }
 
 header{
@@ -268,4 +268,5 @@ table tbody tr td {
 .postQuestions,
 .savedQuestions {
   display: none;
+  flex-direction: column;
 }
